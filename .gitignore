@@ -1,3 +1,5 @@
+#Config secret-variables
+config_secret.py
 #virtual environments
 flask_env/
 

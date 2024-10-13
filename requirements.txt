@@ -1,1 +1,4 @@
 Flask
+sqlalchemy
+mysql-connector-python
+mysql
