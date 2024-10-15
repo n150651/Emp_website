@@ -7,6 +7,9 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
         #banner{
@@ -23,7 +26,7 @@
     <div class="container">
         <h1 class="fs-2 text-center">Welcome to Sweet Home</h1>
         <img id="banner" src="../static/banner.jpg" alt="sweets_image_in_a_box">
-        <h2 class="fs-6 text-center" >About Sweet Home</h2>
+        <h2 class="fs-4 text-center" >About Sweet Home</h2>
         <p class="lead">
             A delightful sweet shop specializes in crafting a wide variety of traditional Indian sweets, 
             ensuring each treat is made with authentic methods and ingredients. 
@@ -31,9 +34,8 @@
             offering customers a genuine taste of India with every bite
         </p>
         <p >TODO-Menu Items</p>
+        {% include 'menu.html' %}
     </div>
-    
-
 </body>
 {% include 'footer.html' %}
 </html>

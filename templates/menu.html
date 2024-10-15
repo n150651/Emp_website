@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table table-bordered mt-3 caption-top">
+        <caption class="h3"> Our Menu</caption>
+        <thead>
+            <tr class="table-dark">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item  in menu %}
+            <tr>
+                <td >{{ item.ID }}</td>
+                <td >{{ item.Sweet_name}}</td>
+                <td >&#8377;{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

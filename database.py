@@ -4,14 +4,27 @@ from config_secret import DB_URL
 # Create the engine
 engine = create_engine(DB_URL)
 
-# Use the with clause to manage the connection
-with engine.connect() as connection:
-    # Check if the connection was successful
-    if connection:
-        print("connection was successful")
-        result=connection.execute(text("select * from menu linit 10;"))
-        print(result.all())
-    else:
-        print("Connection failed")
-
-# No need to explicitly close the connection, it's handled by the with clause
+def load_items_from_menu():
+    with engine.connect() as connection:
+        result=connection.execute(text("select * from menu limit 10;"))
+        menu_list=[]
+        for row in result.all():
+            menu_list.append(row._asdict())
+        return menu_list
+def load_jobs_from_careers():
+    with engine.connect() as connection:
+        result=connection.execute(text("select * from careers;"))
+        job_list=[]
+        for row in result.all():
+            job_list.append(row._asdict())
+        return job_list
+def load_job_from_db(id):
+    with engine.connect() as connection:
+        result = connection.execute(text("select * from careers where job_id = :val"), {'val': id})
+        rows=result.all()
+        if len(rows)==0:
+            return None
+        else:
+            return rows[0]._asdict()
+    
+    
